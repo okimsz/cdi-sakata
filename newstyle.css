@@ -12,7 +12,7 @@ body {
 }
 html, body {
   max-width: 100%;
-  overflow-x: hidden;
+
 }
 .product-grid {
   width: 100%;
@@ -24,18 +24,7 @@ html, body {
   overflow-wrap: break-word;
 }
 
-/* NAVBAR */
-.navbar {
-  background: #002244;
-  backdrop-filter: blur(2px);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+
   .logo-area {
   display: flex;
   align-items: center;
@@ -168,7 +157,7 @@ html, body {
     grid-template-columns: 1fr;
   }
   body {
-  overflow-x: hidden;
+ 
 }
 @media (max-width: 600px) {
   .product-grid {
@@ -416,3 +405,125 @@ section {
     width: auto;
   }
 }
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #002244;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 1rem;
+    border-bottom: 1px solid #003355;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+/* Navbar base layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #002244;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.brand {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Navigation links desktop */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Hide nav by default on mobile */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  } 
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #002244;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 1rem 0;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.75rem 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
